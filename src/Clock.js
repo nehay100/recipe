@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+/**
+ * This is a timer component that ticks down second by second until a timer is over.
+ * @prop {number} time number of seconds for timer. (e.g. 30 minute timer would have a time prop of 1800)
+ */
 class Clock extends Component {
   constructor(props) {
     super(props);
