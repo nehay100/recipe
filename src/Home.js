@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import Post from './Post';
+import Recipe from './Recipe';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [],
-            postsRef: null,
+            recipes: []
         };
     }
     // retrieves all posts for state
     componentDidMount() {
-        let postsRef = firebase.database().ref('posts').orderByChild('timestamp')
-        postsRef.on('value', (snapshot) => {
+        let recipeRef = firebase.database().ref('recipes').orderByChild('timestamp');
+        recipeRef.on('value', (snapshot) => {
             this.setState({
-                posts: snapshot.val(),
+                recipes: snapshot.val()
             });
-        })
+        });
     }
 
     // renders all posts
     render() {
-        let postKeys = [];
-        if (this.state.posts != null) {
-            postKeys = Object.keys(this.state.posts);
-        }
         return (
             <div>
                 <h1>Home</h1>
-                {postKeys.map((postKey) => {
-                    return <Post postKey={postKey} key={postKey} /> 
-                })}
+                {
+                    Object.keys(this.state.recipes).map((key) => {
+                        return <Recipe recipeKey={key}/> 
+                    })
+                }
             </div>
         );
     }

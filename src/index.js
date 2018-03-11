@@ -14,6 +14,7 @@ let config = {
     storageBucket: "recipe-8f6ec.appspot.com",
     messagingSenderId: "511679998832"
 };
+
 firebase.initializeApp(config);
 
 ReactDOM.render(<App />, document.getElementById('root'));

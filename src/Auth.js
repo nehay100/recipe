@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+//import SignUp from './SignUp';
 // import './Auth.css';
 
 class Auth extends Component {
@@ -10,7 +11,8 @@ class Auth extends Component {
             errorMessage: '',
             email: '',
             password: '',
-            username: ''
+            username: '',
+            //signup: false
         };
     }
     componentDidMount() {
@@ -31,7 +33,6 @@ class Auth extends Component {
     }
 
     handleSignUp() {
-  
         /* Create a new user and save their information */
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(firebaseUser => {
@@ -90,53 +91,53 @@ class Auth extends Component {
   
     // renders form for sign up/login
     render() {
-        return (
-            <div className="container">
-                {this.state.errorMessage &&
-                    <p className="alert alert-danger">{this.state.errorMessage}</p>
-                }
-                <div className="page-header">
-                    <h1>recip.e</h1>
-                </div>
+            return (
+                <div className="container">
+                    {this.state.errorMessage &&
+                        <p className="alert alert-danger">{this.state.errorMessage}</p>
+                    }
+                    <div className="page-header">
+                        <h1>recip.e</h1>
+                    </div>
 
-  
-                <div className="form-group">
-                    <label>Email:</label>
-                    <input className="form-control"
-                        name="email"
-                        value={this.state.email}
-                        onChange={(event) => { this.handleChange(event) }}
-                    />
+    
+                    <div className="form-group">
+                        <label>Email:</label>
+                        <input className="form-control"
+                            name="email"
+                            value={this.state.email}
+                            onChange={(event) => { this.handleChange(event) }}
+                        />
+                    </div>
+    
+                    <div className="form-group">
+                        <label>Password:</label>
+                        <input type="password" className="form-control"
+                            name="password"
+                            value={this.state.password}
+                            onChange={(event) => { this.handleChange(event) }}
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <label>Password:</label>
+                        <input type="username" className="form-control"
+                            name="username"
+                            value={this.state.username}
+                            onChange={(event) => { this.handleChange(event) }}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <button className="btn btn-primary mr-2" onClick={() => this.handleSignUp()}>
+                            Sign Up
+                        </button>
+                        <button className="btn btn-success mr-2" onClick={() => this.handleSignIn()}>
+                            Sign In
+                        </button>
+                    </div>
                 </div>
-  
-                <div className="form-group">
-                    <label>Password:</label>
-                    <input type="password" className="form-control"
-                        name="password"
-                        value={this.state.password}
-                        onChange={(event) => { this.handleChange(event) }}
-                    />
-                </div>
-  
-                <div className="form-group">
-                    <label>Username:</label>
-                    <input className="form-control"
-                        name="username"
-                        value={this.state.username}
-                        onChange={(event) => { this.handleChange(event) }}
-                    />
-                </div>
-  
-                <div className="form-group">
-                    <button className="btn btn-primary mr-2" onClick={() => this.handleSignUp()}>
-                        Sign Up
-                     </button>
-                    <button className="btn btn-success mr-2" onClick={() => this.handleSignIn()}>
-                        Sign In
-                    </button>
-                </div>
-            </div>
-        );
+            );
     }
   }
   
