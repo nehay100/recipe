@@ -130,7 +130,7 @@ class Auth extends Component {
                     </div>
                     
                     <div className="form-group">
-                        <label>Password:</label>
+                        <label>Username:</label>
                         <input type="username" className="form-control"
                             name="username"
                             value={this.state.username}
