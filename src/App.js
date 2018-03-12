@@ -4,11 +4,9 @@ import firebase from 'firebase';
 import bootstrap from 'bootstrap';
 import Auth from './Auth';
 import Home from './Home';
-import NewPost from './NewPost';
+import AddRecipe from './AddRecipe';
 import MyRecipes from './MyRecipes';
 import About from './About';
-
-
 
 class App extends Component {
     constructor(props) {
@@ -63,10 +61,10 @@ class App extends Component {
                             <a className="nav-link" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#/my-recipes">My Recipes</a>
+                            <a className="nav-link" href="#/post">Add Recipe</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#/post">+</a>
+                            <a className="nav-link" href="#/my-recipes">My Recipes</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#/about">About</a>
@@ -81,7 +79,7 @@ class App extends Component {
                     <Router>
                     <div className="container">
                         <Route exact path="/" component={Home} />
-                        <Route path="/post" component={NewPost} />
+                        <Route path="/post" component={AddRecipe} />
                         <Route path="/my-recipes" component={MyRecipes} />
                         <Route path="/about" component={About} />
                     </div>
