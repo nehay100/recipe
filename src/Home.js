@@ -26,7 +26,7 @@ class Home extends Component {
                 <h1>Home</h1>
                 {
                     Object.keys(this.state.recipes).map((key) => {
-                        return <Recipe recipeKey={key}/> 
+                        return <Recipe recipeKey={key} updateSelectedRecipe={this.props.updateSelectedRecipe}/> 
                     })
                 }
             </div>

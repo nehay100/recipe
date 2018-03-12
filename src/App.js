@@ -18,8 +18,22 @@ class App extends Component {
             user: null,
             email: '',
             password: '',
-            username: ''
+            username: '',
+
+            selectedRecipeID: ''
         };
+
+        this.updateSelectedRecipe = this.updateSelectedRecipe.bind(this);
+    }
+
+    /**
+     * Updates selected recipe ID, used for handling the router easier
+     * @param {string} id 
+     */
+    updateSelectedRecipe(id) {
+        this.setState({
+            selectedRecipeID: id
+        })
     }
 
     handleSignOut() {
@@ -81,11 +95,11 @@ class App extends Component {
 
                         <Router>
                             <div className="container">
-                                <Route exact path="/" component={Home} />
+                                <Route exact path="/" render={()=><Home updateSelectedRecipe={this.updateSelectedRecipe}/>} />
                                 <Route path="/post" component={AddRecipe} />
                                 <Route path="/my-recipes" component={MyRecipes} />
                                 <Route path="/about" component={About} />
-                                <Route path="/viewmore" render={()=><ViewMore recipeKey={"-L7QVHSYO7XxWlUliM89"}/>} />
+                                <Route path="/viewmore" render={()=><ViewMore recipeKey={this.state.selectedRecipeID}/>} />
                                 <Route path="/steps" component={Steps} />
                             </div>
                         </ Router>
