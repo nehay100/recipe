@@ -66,32 +66,25 @@ class Recipe extends Component {
         //     return comment; //the transformed object to store in the array
         // });
         return (
-            <div className="card mt-8" width="18rem">
-                <img className="card-img-top" src={this.state.recipe.imgURL} alt="Card image cap"/>
-                <div className="card-body">
-                    <h5 className="card-title">{this.state.recipe.title}</h5>
-                    {/* {console.log(this.state.recipe)}
-                    {
-                        this.state.recipe.allergies.map((tag) => {
-                            return <p className="card-text d-inline mr-3">{"#" + tag}</p>;
-                        })
-                    }
-
-                    {
-                        this.state.recipe.genres.map((tag) => {
-                            return <p className="card-text d-inline mr-3">{"#" + tag}</p>;
-                        })
-                    } */}
-                    <p className="card-text d-inline mr-3">{"Author: " + this.state.recipe.author}</p>
-                    <p className="card-text d-inline mr-3">{"Calories: " + this.state.recipe.calories}</p>
-                    <p className="card-text d-inline mr-3">{"Duration: " + this.state.recipe.duration}</p>
-                    <p className="card-text mt-3">{this.state.recipe.description}</p>
-                    <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p>
-                    <a href="#" className="btn btn-primary">View More</a>
-                    <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>{this.state.recipe.likes + " likes"}</button>
-                </div>
+        <div className="container">
+          <div className="card mt-8" style={{ width: "auto" }}>
+            <img className="card-img-top" src={this.state.recipe.imgURL} alt="Card image cap" />
+            <div className="card-body">
+              <h5 className="card-title">{this.state.recipe.title}</h5>
+              <p className="card-text d-inline mr-3">{"Author: " + this.state.recipe.author}</p>
+              <p className="card-text d-inline mr-3">{"Calories: " + this.state.recipe.calories}</p>
+              <p className="card-text d-inline mr-3">{"Duration: " + this.state.recipe.duration}</p>
+              <p className="card-text mt-3">{this.state.recipe.description}</p>
+              <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p>
+              <a href="#" className="btn btn-primary">
+                View More
+              </a>
+              <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>
+                {this.state.recipe.likes + " likes"}
+              </button>
             </div>
-        );
+          </div>
+        </div>);
     }
 }
 
