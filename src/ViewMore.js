@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Steps from './Steps';
 
 class ViewMore extends Component {
@@ -13,12 +12,12 @@ class ViewMore extends Component {
     }
 
     componentDidMount() {
-        // this.recipeRef = firebase.database().ref('recipes').child(this.props.recipeKey);
-        // this.recipeRef.on('value', (snapshot) => {
-        //     this.setState({
-        //         recipe: snapshot.val(),
-        //     });
-        // })
+        this.recipeRef = firebase.database().ref('recipes').child(this.props.key);
+        this.recipeRef.on('value', (snapshot) => {
+            this.setState({
+                recipe: snapshot.val(),
+            });
+        })
     }
 
     render() {
@@ -34,7 +33,6 @@ class ViewMore extends Component {
                     <p className="card-text mt-3">{this.state.recipe.description}</p>
                     <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p> */}
                     <a href="#/steps" className="btn btn-primary">Steps</a>
-                    {/* <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>{this.state.recipe.likes + " likes"}</button> */}
                 </div>
             </div>
         );

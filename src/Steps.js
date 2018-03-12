@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-
 class Steps extends Component {
     constructor(props) {
         super(props);
