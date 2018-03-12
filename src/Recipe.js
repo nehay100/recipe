@@ -79,7 +79,7 @@ class Recipe extends Component {
                     <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p>
 
                     <a href="#/viewmore" className="btn btn-primary">View More</a>
-                    <ViewMore key={this.props.recipeKey} />
+                    <ViewMore recipeKey={this.props.recipeKey} />
 
                     <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>{this.state.recipe.likes + " likes"}</button>
                 </div>

@@ -12,7 +12,7 @@ class ViewMore extends Component {
     }
 
     componentDidMount() {
-        this.recipeRef = firebase.database().ref('recipes').child(this.props.key);
+        this.recipeRef = firebase.database().ref('recipes').child(this.props.recipeKey);
         this.recipeRef.on('value', (snapshot) => {
             this.setState({
                 recipe: snapshot.val(),
