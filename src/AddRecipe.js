@@ -44,7 +44,7 @@ class AddRecipe extends Component {
             imgURL: this.state.img,
             ingredients: this.state.ingredients,
             procedure: this.state.steps,
-            ratings: [],
+            ratings: [0],
             likes: 0,
             timestamp: firebase.database.ServerValue.TIMESTAMP,
         })
@@ -112,7 +112,7 @@ class AddRecipe extends Component {
         return (
             <div>
                 <h1>Add a Recipe</h1>
-                <form name="add">
+                <form>
                     <h4>Recipe Stats</h4>
                     <input className="form-control mb-2" type="text" placeholder="Recipe Title" onChange={(event) => { this.setState({title: event.target.value}) }}/>
                     <input className="form-control mb-2" type="text" placeholder="Short Description" onChange={(event) => { this.setState({description: event.target.value}) }}/>
@@ -126,18 +126,19 @@ class AddRecipe extends Component {
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => { this.setState({ingredients: event.target.value}) }}></textarea>
                     </div>
                     <h4 className="pt-3">Add a Step to Recipe Procedure</h4>
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">Instructions</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => { this.setState({instruction: event.target.value}) }}></textarea>
-                        
-                        <label className="pt-2" htmlFor="exampleFormControlTextarea1">If this step requires a timer, enter that time in seconds. If not enter -1.</label>
-                        <input className="form-control mb-2" type="text" placeholder="Clock Duration" onChange={(event) => { this.setState({clock: event.target.value}) }}/>
+                    <form name="add">
                         <div className="form-group">
-                            <button className="btn btn-success mr-3" onClick={() => this.addStep()}>Add Step</button>
-                            <button className="btn btn-info mr-3" onClick={() => this.clearStep()}>Clear</button>
+                            <label htmlFor="exampleFormControlTextarea1">Instructions</label>
+                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => { this.setState({instruction: event.target.value}) }}></textarea>
+                            
+                            <label className="pt-2" htmlFor="exampleFormControlTextarea1">If this step requires a timer, enter that time in seconds. If not enter -1.</label>
+                            <input className="form-control mb-2" type="text" placeholder="Clock Duration" onChange={(event) => { this.setState({clock: event.target.value}) }}/>
+                            <div className="form-group">
+                                <button className="btn btn-success mr-3" onClick={() => this.addStep()}>Add Step</button>
+                                <button className="btn btn-info mr-3" onClick={() => this.clearStep()}>Clear</button>
+                            </div>
                         </div>
-                        
-                    </div>
+                    </form>
                     
                     <button className="btn btn-primary" onClick={() => this.handleNewRecipe()}>Add Recipe</button>
                 </form>
