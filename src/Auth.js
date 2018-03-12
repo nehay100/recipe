@@ -40,7 +40,9 @@ class Auth extends Component {
                 let profilePromise = firebaseUser.updateProfile({
                     displayName: this.state.username,
                 }); //return promise for chaining
-  
+                
+                this.addMember();
+
                 return profilePromise;
             })
             .then(firebaseUser => {
@@ -51,8 +53,16 @@ class Auth extends Component {
             .catch((err) => {
                 console.log(err);
                 this.setState({ errorMessage: err.message })
-            })
+            });
     }
+
+    addMember() {
+        let memberRef = firebase.database().ref('members');     // adds new members to database
+        memberRef.push({
+            username: this.state.username
+        });
+    }
+
     handleSignIn() {
         //A callback function for logging in existing users
   
