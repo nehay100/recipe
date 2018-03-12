@@ -3,6 +3,8 @@ import firebase from 'firebase';
 //import moment from 'moment';
 //import swal from 'sweetalert';
 
+import ViewMore from './ViewMore';
+
 class Recipe extends Component {
     constructor(props) {
         super(props);
@@ -76,9 +78,7 @@ class Recipe extends Component {
               <p className="card-text d-inline mr-3">{"Duration: " + this.state.recipe.duration}</p>
               <p className="card-text mt-3">{this.state.recipe.description}</p>
               <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p>
-              <a href="#" className="btn btn-primary">
-                View More
-              </a>
+              <a href="#/viewmore" className="btn btn-primary" onClick={() => this.props.updateSelectedRecipe(this.props.recipeKey)}>View More</a>
               <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>
                 {this.state.recipe.likes + " likes"}
               </button>

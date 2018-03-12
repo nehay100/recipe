@@ -27,7 +27,7 @@ class Home extends Component {
               <div className="row">
                 {Object.keys(this.state.recipes).map(key => {
                   return <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                      <Recipe recipeKey={key} />
+                      <Recipe recipeKey={key} updateSelectedRecipe={this.props.updateSelectedRecipe} />
                     </div>;
                 })}
               </div>
