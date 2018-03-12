@@ -85,7 +85,7 @@ class App extends Component {
                                 <Route path="/post" component={AddRecipe} />
                                 <Route path="/my-recipes" component={MyRecipes} />
                                 <Route path="/about" component={About} />
-                                <Route path="/viewmore" component={ViewMore} />
+                                <Route path="/viewmore" render={()=><ViewMore recipeKey={"-L7QVHSYO7XxWlUliM89"}/>} />
                                 <Route path="/steps" component={Steps} />
                             </div>
                         </ Router>
