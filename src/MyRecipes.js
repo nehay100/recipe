@@ -39,7 +39,7 @@ class MyRecipes extends Component {
             {recipeKeys.map(recipeKey => {
               return (
                 <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                  <Recipe recipeKey={recipeKey} key={recipeKey} />
+                  <Recipe recipeKey={recipeKey} key={recipeKey} updateSelectedRecipe={this.props.updateSelectedRecipe} />
                 </div>
               );
             })}

@@ -97,7 +97,7 @@ class App extends Component {
                             <div className="container">
                                 <Route exact path="/" render={()=><Home updateSelectedRecipe={this.updateSelectedRecipe}/>} />
                                 <Route path="/post" component={AddRecipe} />
-                                <Route path="/my-recipes" component={MyRecipes} />
+                                <Route path="/my-recipes" render={()=><MyRecipes updateSelectedRecipe={this.updateSelectedRecipe}/>}/>
                                 <Route path="/about" component={About} />
                                 <Route path="/viewmore" render={()=><ViewMore recipeKey={this.state.selectedRecipeID}/>} />
                                 <Route path="/steps" component={Steps} />
