@@ -24,11 +24,9 @@ class Home extends Component {
         return <div>
             <h1>Home</h1>
             <div className="container">
-              <div className="row">
+              <div className="card-columns">
                 {Object.keys(this.state.recipes).map(key => {
-                  return <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                      <Recipe recipeKey={key} updateSelectedRecipe={this.props.updateSelectedRecipe} />
-                    </div>;
+                  return <Recipe recipeKey={key} updateSelectedRecipe={this.props.updateSelectedRecipe} />
                 })}
               </div>
             </div>

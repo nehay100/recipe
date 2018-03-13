@@ -68,8 +68,7 @@ class Recipe extends Component {
         //     return comment; //the transformed object to store in the array
         // });
         return (
-        <div className="container">
-          <div className="card mt-8" style={{ width: "auto" }}>
+          <div className="card">
             <img className="card-img-top" src={this.state.recipe.imgURL} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">{this.state.recipe.title}</h5>
@@ -85,8 +84,7 @@ class Recipe extends Component {
                 {this.state.recipe.likes !== 1 && this.state.recipe.likes + " likes"}
               </button>
             </div>
-          </div>
-        </div>);
+          </div>);
     }
 }
 
