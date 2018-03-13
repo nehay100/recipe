@@ -73,14 +73,16 @@ class Recipe extends Component {
             <img className="card-img-top" src={this.state.recipe.imgURL} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">{this.state.recipe.title}</h5>
-              <p className="card-text d-inline mr-3">{"Author: " + this.state.recipe.author}</p>
-              <p className="card-text d-inline mr-3">{"Calories: " + this.state.recipe.calories}</p>
-              <p className="card-text d-inline mr-3">{"Duration: " + this.state.recipe.duration}</p>
-              <p className="card-text mt-3">{this.state.recipe.description}</p>
+              <p className="card-subtitle mb-2 text-muted">{this.state.recipe.description}</p>
+              <p className="card-text">{"Author: " + this.state.recipe.author}</p>
+              <p className="card-text">{"Calories: " + this.state.recipe.calories}</p>
+              <p className="card-text">{"Duration: " + this.state.recipe.duration + " minutes"}</p>
               <p className="card-text">{"Ingredients: " + this.state.recipe.ingredients}</p>
               <a href="#/viewmore" className="btn btn-primary" onClick={() => this.props.updateSelectedRecipe(this.props.recipeKey)}>View More</a>
               <button className="btn btn-primary ml-3" onClick={() => this.likeMessage()}>
-                {this.state.recipe.likes + " likes"}
+                {/* These two statements make sure it goes between "like" and "likes" correctly */}
+                {this.state.recipe.likes === 1 && this.state.recipe.likes + " like"}
+                {this.state.recipe.likes !== 1 && this.state.recipe.likes + " likes"}
               </button>
             </div>
           </div>
