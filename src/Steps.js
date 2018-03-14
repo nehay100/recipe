@@ -30,7 +30,7 @@ class Steps extends Component {
     let items = [];
     return (
       <div className="row">
-        <div className="col-8 order-12">
+        <div className="col-12">
           <div className="list-group">
             {this.state.recipe.procedure.map(step => {
               let stepNum = `Step-${this.state.recipe.procedure.indexOf(step) + 1}`;
@@ -45,26 +45,6 @@ class Steps extends Component {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        <div className="col-4 order-1">
-          <div className="list-group">
-            <Scrollspy
-              items={items}
-              currentClassName="list-group-item list-group-item-action active"
-              scrolledPastClassName="list-group-item list-group-item-action"
-            >
-              {this.state.recipe.procedure.map(step => {
-                let stepNum = `Step-${this.state.recipe.procedure.indexOf(step) + 1}`;
-                console.log(stepNum);
-                return (
-                  <a key={stepNum} id={stepNum}>
-                    {stepNum}
-                  </a>
-                );
-              })}
-            </Scrollspy>
           </div>
         </div>
       </div>
