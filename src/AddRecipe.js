@@ -28,7 +28,6 @@ class AddRecipe extends Component {
 
         // When the database 'value' changes, change the state of `imgs`
         this.dataRef.on('value', (snapshot) => {
-            console.log('snapshot', snapshot.val());
             this.setState({
                 imgs: snapshot.val() || {}
             })
@@ -107,7 +106,6 @@ class AddRecipe extends Component {
             clock: this.state.clock
         }
         this.state.steps.push(step);
-        console.log(this.state.steps);
         this.clearStep();
     }
     
@@ -128,123 +126,123 @@ class AddRecipe extends Component {
                     <h4>Recipe Stats</h4>
                     <input className="form-control mb-2" type="text" placeholder="Recipe Title" onChange={(event) => { this.setState({title: event.target.value}) }}/>
                     <input className="form-control mb-2" type="text" placeholder="Short Description" onChange={(event) => { this.setState({description: event.target.value}) }}/>
-                    <input className="form-control mb-2" type="text" placeholder="Duration (minutes)" onChange={(event) => { this.setState({duration: event.target.value}) }}/>
-                    <input className="form-control mb-2" type="text" placeholder="Calorie Intake" onChange={(event) => { this.setState({calories: event.target.value}) }}/>
+                    <input className="form-control mb-2" type="number" min="0" placeholder="Duration (minutes)" onChange={(event) => { this.setState({duration: event.target.value}) }}/>
+                    <input className="form-control mb-2" type="number" min="0" placeholder="Calorie Intake" onChange={(event) => { this.setState({calories: event.target.value}) }}/>
                     
                     <h7 className="mt-6">Allergy Tags</h7>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("milk")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("milk")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Milk
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("eggs")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("eggs")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Eggs
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("nuts")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("nuts")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Nuts
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("peanuts")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("peanuts")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Peanuts
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("shellfish")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("shellfish")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Shellfish
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("wheat")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("wheat")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Wheat
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("soy")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("soy")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Soy
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("fish")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("fish")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Fish
                         </label>
                     </div>
 
                     <h7 className="mt-3">Types of Food Tags</h7>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("american")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("american")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             American
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("chinese")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("chinese")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Chinese
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("french")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("french")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             French 
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("indian")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("indian")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Indian
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("milk")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("milk")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Italian
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("japanese")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("japanese")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Japanese
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("korean")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("korean")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Korean
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("mediterranean")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("mediterranean")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Mediterranean
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("mexican")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("mexican")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Mexican
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("thai")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("thai")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Thai
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("other")}}/>
-                        <label class="form-check-label" for="defaultCheck1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateGenre("other")}}/>
+                        <label className="form-check-label" htmlFor="defaultCheck1">
                             Other
                         </label>
                     </div>
@@ -263,8 +261,14 @@ class AddRecipe extends Component {
                             <label htmlFor="exampleFormControlTextarea1">Instructions</label>
                             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => { this.setState({instruction: event.target.value}) }}></textarea>
                             
-                            <label className="pt-2" htmlFor="exampleFormControlTextarea1">If this step requires a timer, enter that time in seconds. If not enter -1.</label>
-                            <input className="form-control mb-2" type="text" placeholder="Clock Duration" onChange={(event) => { this.setState({clock: event.target.value}) }}/>
+                            <label className="pt-2" htmlFor="exampleFormControlTextarea1">If this step requires a timer, enter that time in minutes.</label>
+                            <input className="form-control mb-2" type="number" min="1" placeholder="Clock Duration" onChange={(event) => { 
+                                if (event.target.value === "") {
+                                    this.setState({clock: -1})
+                                } else {
+                                    this.setState({clock: event.target.value * 60}) }}
+                                }
+                            />
                             <div className="form-group">
                                 <button className="btn btn-success mr-3" onClick={() => this.addStep()}>Add Step</button>
                                 <button className="btn btn-info mr-3" onClick={() => this.clearStep()}>Clear</button>
