@@ -275,7 +275,7 @@ class AddRecipe extends Component {
                             </div>
                         </div>
                     </form>
-                    <button className="btn btn-primary" onClick={event => {event.preventDefault; this.handleNewRecipe()}}>Add Recipe</button>
+                    <button className="btn btn-primary" onClick={event => {event.preventDefault(); this.handleNewRecipe()}}>Add Recipe</button>
                 </form>
             </div>
         );
