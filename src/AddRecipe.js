@@ -270,13 +270,12 @@ class AddRecipe extends Component {
                                 }
                             />
                             <div className="form-group">
-                                <button className="btn btn-success mr-3" onClick={() => this.addStep()}>Add Step</button>
-                                <button className="btn btn-info mr-3" onClick={() => this.clearStep()}>Clear</button>
+                                <button className="btn btn-success mr-3" onClick={event => {event.preventDefault(); this.addStep()}}>Add Step</button>
+                                <button className="btn btn-info mr-3" onClick={event => {event.preventDefault(); this.clearStep()}}>Clear</button>
                             </div>
                         </div>
                     </form>
-                    
-                    <button className="btn btn-primary" onClick={() => this.handleNewRecipe()}>Add Recipe</button>
+                    <button className="btn btn-primary" onClick={event => {event.preventDefault; this.handleNewRecipe()}}>Add Recipe</button>
                 </form>
             </div>
         );
