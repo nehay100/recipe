@@ -20,32 +20,7 @@ class Recipe extends Component {
                 recipe: snapshot.val(),
             });
         })
-
-        // let commentsRef = firebase.database().ref('comments').child(this.props.postKey)
-        // commentsRef.on('value', (snapshot) => {
-        //     this.setState({
-        //         comments: snapshot.val(),
-        //     });
-        // })
     }
-
-    // // creates and handles comment details
-    // addComment() {
-    //     let commentsRef = firebase.database().ref('comments').child(this.props.postKey)
-    //     commentsRef.push({
-    //         text: this.state.comment,
-    //         timestamp: Date.now(),
-    //         creator: firebase.auth().currentUser.uid,
-    //         creator_name: firebase.auth().currentUser.displayName
-    //     })
-    //     this.setState({
-    //         comment: '',
-    //     })
-    //     swal({
-    //         title: 'Comment added!',
-    //         icon: 'success'
-    //     });
-    // }
 
     likeMessage() {
         let likeRef = firebase.database().ref('recipes/' + this.props.recipeKey + '/likes');
@@ -58,15 +33,6 @@ class Recipe extends Component {
 
     // renders post with all like/coment details
     render() {
-        // let commentKeys = [];
-        // if (this.state.comments != null) {
-        //     commentKeys = Object.keys(this.state.comments);
-        // }
-        // let commentArray = commentKeys.map((key) => { //map array of keys into array of tasks
-        //     let comment = this.state.comments[key]; //access element at that key
-        //     comment.key = key; //save the key for later referencing!
-        //     return comment; //the transformed object to store in the array
-        // });
         return (
           <div className="card">
             <img className="card-img-top" src={this.state.recipe.imgURL} alt="Card image cap" />

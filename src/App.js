@@ -7,7 +7,6 @@ import Home from './Home';
 import AddRecipe from './AddRecipe';
 import MyRecipes from './MyRecipes';
 import About from './About';
-
 import ViewMore from './ViewMore';
 import Steps from './Steps';
 

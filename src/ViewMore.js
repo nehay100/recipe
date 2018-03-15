@@ -85,7 +85,6 @@ class ViewMore extends Component {
                     <p className="card-text">{"Ratings: " + this.state.recipe.ratings}</p>
                     <p className="card-text">{"Allergies: " + this.state.recipe.allergies}</p>
                     <a href="#/steps" className="btn btn-primary">Steps</a>
-                    {/* <a href="#/steps" className="btn btn-primary" onClick={() => this.props.updateSelectedRecipe(this.props.recipeKey)}>Steps</a> */}
                     <div className="mt-4">
                     {commentArray.map((comment) => {
                         return <p key={comment.key}>{comment.text} <span className="text-muted">By {comment.creator_name}, {moment(comment.timestamp).fromNow()}.</span></p>
