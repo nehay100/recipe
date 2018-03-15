@@ -123,16 +123,17 @@ class AddRecipe extends Component {
             <div>
                 <h1>Add a Recipe</h1>
                 <form>
-                    <h4>Recipe Stats</h4>
+                    <h2>Recipe Stats</h2>
                     <input className="form-control mb-2" type="text" placeholder="Recipe Title" onChange={(event) => { this.setState({title: event.target.value}) }}/>
                     <input className="form-control mb-2" type="text" placeholder="Short Description" onChange={(event) => { this.setState({description: event.target.value}) }}/>
                     <input className="form-control mb-2" type="number" min="0" placeholder="Duration (minutes)" onChange={(event) => { this.setState({duration: event.target.value}) }}/>
                     <input className="form-control mb-2" type="number" min="0" placeholder="Calorie Intake" onChange={(event) => { this.setState({calories: event.target.value}) }}/>
                     
-                    <h7 className="mt-6">Allergy Tags</h7>
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("milk")}}/>
-                        <label className="form-check-label" htmlFor="defaultCheck1">
+                    <p className="mt-6">Allergy Tags</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={() => {this.updateAllergy("milk")}}/>
+                        <label class="form-check-label" for="defaultCheck1">
+
                             Milk
                         </label>
                     </div>
