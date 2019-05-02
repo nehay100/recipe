@@ -7,7 +7,6 @@ import Home from './Home';
 import AddRecipe from './AddRecipe';
 import MyRecipes from './MyRecipes';
 import About from './About';
-
 import ViewMore from './ViewMore';
 import Steps from './Steps';
 
@@ -99,8 +98,8 @@ class App extends Component {
                                 <Route path="/post" component={AddRecipe} />
                                 <Route path="/my-recipes" render={()=><MyRecipes updateSelectedRecipe={this.updateSelectedRecipe}/>}/>
                                 <Route path="/about" component={About} />
-                                <Route path="/viewmore" render={()=><ViewMore recipeKey={this.state.selectedRecipeID}/>} />
-                                <Route path="/steps" component={Steps} />
+                                <Route path="/viewmore" render={()=><ViewMore recipeKey={this.state.selectedRecipeID}/>}/>
+                                <Route path="/steps" render={()=> <Steps recipeKey={this.state.selectedRecipeID} />}/>
                             </div>
                         </ Router>
                     </div>

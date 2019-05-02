@@ -48,9 +48,11 @@ class Home extends Component {
         return <div>
             <div className="container">
             <h1>Home</h1>
+            <p>Filter common allergens:</p>
+
               <fieldset onChange={(e) => {this.updateAllergenFilter(e)}}>
                 {allergens.map(a => {
-                    return <div className="form-check" key={a}>
+                    return <div className="form-check form-check-inline" key={a}>
                         <input className="form-check-input" name="allergens" type="checkbox" value={a} id="{'allergen-' + a}">
                         </input>
                         <label className="form-check-label" htmlFor={'allergen-' + a}>
